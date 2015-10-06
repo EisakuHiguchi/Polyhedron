@@ -1,0 +1,1 @@
+splot 'C:\\Users\\Iris\\Dropbox\\polyhedron\\octa\\squaredata.txt'  w l

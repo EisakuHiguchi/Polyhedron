@@ -1,0 +1,28 @@
+package icosa;
+
+public class Pointer3D {
+	
+	public Pointer3D() {
+		
+	}
+	
+	
+	public void setPoint(double x, double y, double z) {
+		
+	}
+	
+	public void setX(double x) {
+		
+	}
+	
+	public void setY(double y) {
+		
+	}
+	
+	public void setZ(double z) {
+		
+	}
+	
+	
+
+}

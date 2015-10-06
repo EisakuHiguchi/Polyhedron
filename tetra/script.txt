@@ -1,0 +1,1 @@
+splot 'C:\\Users\\Iris\\Dropbox\\polyhedron\\tetra\\data.txt' w l

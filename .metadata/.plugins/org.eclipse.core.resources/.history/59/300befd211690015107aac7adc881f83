@@ -1,0 +1,10 @@
+package tetra;
+
+public class Wire {
+
+	Unit[] unit;
+	
+	public void init(Unit a, Unit b) {
+		unit = new Unit[2];
+	}
+}

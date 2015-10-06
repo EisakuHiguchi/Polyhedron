@@ -1,0 +1,9 @@
+package icosa;
+
+public class Pointer3D {
+	
+	public Pointer3D() {
+		
+	}
+
+}

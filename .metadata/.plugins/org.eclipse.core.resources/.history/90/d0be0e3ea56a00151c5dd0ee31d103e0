@@ -1,0 +1,99 @@
+package octa;
+
+import java.util.ArrayList;
+
+public class square {
+	
+	ArrayList<Unit> unitarray;
+	int num;
+	double r;
+	
+	public square(int num, double r) {
+		init(num);
+		setUnitDistance(r);
+	}
+	
+	public void init(int num) {
+		unitarray = new ArrayList<>();
+		this.num = num;
+	}
+	
+	public void setUnitDistance(double r) {
+		this.r = r;
+	}
+	
+	public boolean setDirBit(int dir) {
+		/*
+		 * x 1
+		 * y 2
+		 * z 3
+		 */
+		int r;
+		int bd = Integer.parseInt(Integer.toBinaryString(dir));
+
+		if(num == 0) {
+			r = bd & 100;
+		} else if(num == 1) {
+			r = bd & 010;
+		} else if(num == 2){
+			r = bd & 001;
+		} else if(num == 3) {
+			r = ~bd & 100;
+		} else if(num == 4) {
+			r = ~bd & 010;
+		} else if(num == 5){
+			r = ~bd & 001;
+		} else {
+			r = 0;
+		}
+		return r > 0;
+	}
+	
+	public void setUnit(ArrayList<Unit> array) {
+		for(Unit u: array) {
+			if(setDirBit(u.getDir())){
+				unitarray.add(u);
+			}
+		}
+	}
+	
+	public ArrayList<double[]> getLocation() {
+		ArrayList<double[]> r = new ArrayList<>();
+		for(Unit u: unitarray) {
+			r.add(u.getLocate());
+		}
+		return r;
+	}
+	
+	public void sort() {
+		if(unitarray.size() == 4) {
+			ArrayList<Unit> result = new ArrayList<>();
+			Unit c = unitarray.get(0);
+			result.add(c);
+			
+			for(int i = 0; i < unitarray.size(); i++) {
+				Unit e = unitarray.get(i);
+				if((distance(c,e) == r) & (result.indexOf(e) == -1)) {
+					c = e;
+					result.add(c);
+				}
+			}
+			
+		}
+	}
+	
+	private double distance(Unit u1, Unit u2) {
+		double[] a = u1.getLocate();
+		double[] b = u2.getLocate();
+		double[] d = new double[3];
+		
+		d[0] = a[0] - b[0];
+		d[1] = a[1] - b[1];
+		d[2] = a[2] - b[2];
+		
+		return Math.sqrt(d[0] * d[0]
+				+ d[1] * d[1]
+				+ d[2] * d[2]);	
+	}
+
+}

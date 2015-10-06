@@ -1,0 +1,38 @@
+package icosa;
+
+import java.util.ArrayList;
+
+public class Icosa {
+	
+	ArrayList<Pointer3D> allUnit;
+	
+	public Icosa() {
+		init();
+		generate();
+		
+	}
+	
+	private void init() {
+		allUnit = new ArrayList<>();
+	}
+	
+	private void generate() {
+		double[] g = setGenPrm(2);
+		double[] h = setGenPrm(1);
+		Pointer3D p;
+		
+		
+		
+		p = new Pointer3D(1, g, 0);
+		p = new Pointer3D(0, 1, g);
+		p = new Pointer3D(g, 0, 1);
+		
+		
+		
+	}
+	
+	private double[] setGenPrm(double p) {
+		double[] prm = new double[2];
+	}
+
+}

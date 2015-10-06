@@ -1,0 +1,28 @@
+package icosa;
+
+import java.io.*;
+
+public class icosa_main {
+
+	
+	public static void main(String[] args) {
+		Icosa ico = new Icosa();
+		
+	}
+	
+	
+	private void dubug_AllPoint(Icosa ico) {
+		
+		try {
+			FileWriter fw = new FileWriter("data.txt");
+			for(Pointer3D p: ico.getAllPoint()) {
+				double[] d = p.getPoint();
+				fw.write(d[0] + " " + d[1] + " " + d[2]);
+			}
+			fw.close();
+		} catch (Exception e) {
+			
+		}
+	}
+	
+}

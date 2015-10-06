@@ -1,0 +1,27 @@
+package tetra;
+
+import java.util.ArrayList;
+
+public class UnitClaster {
+
+	ArrayList<Unit> unitarray;
+	
+	public void init() {
+		unitarray = new ArrayList<>();
+		Unit u;
+		for(int i = 0; i < 8; i++) {
+			u = new Unit();
+			unitarray.add(u);
+		}
+		
+	}
+	
+	public ArrayList<double[]> getLocation() {
+		ArrayList<double[]> r = new ArrayList<>();
+		for(Unit u: unitarray) {
+			r.add(u.getLocate())
+		}
+	}
+	
+	
+}

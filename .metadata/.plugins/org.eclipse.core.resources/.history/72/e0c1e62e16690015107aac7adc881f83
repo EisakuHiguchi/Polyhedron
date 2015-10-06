@@ -1,0 +1,14 @@
+package tetra;
+
+import java.util.ArrayList;
+
+public class UnitClaster {
+
+	ArrayList<Unit> unitarray;
+	
+	public void init() {
+		unitarray = new ArrayList<>();
+	}
+	
+	
+}
